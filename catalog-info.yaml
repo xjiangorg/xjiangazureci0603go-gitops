@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: xjiangazureci0603go-gitops
+  description: This is GitOps manifest for xjiangazureci0603go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=xjiangazureci0603go
+    backstage.io/kubernetes-id: xjiangazureci0603go 
+    backstage.io/techdocs-ref: dir:.
+    dev.azure.com/project-repo: xjiangorg/xjiangazureci0603go-gitops
+    dev.azure.com/project: shared-public
+    dev.azure.com/build-definition: xjiangorg.xjiangazureci0603go-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:xjiangazureci0603go
